@@ -1,0 +1,8 @@
+<app-search
+    [query]="(searchQuery$ | async)!"
+    [searching]="(loading$ | async)!"
+    [error]="(error$ | async)!"
+    (search)="search($event)"
+>
+</app-search>
+<app-book-card [books]="(books$ | async)!"></app-book-card>

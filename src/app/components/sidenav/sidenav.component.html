@@ -1,0 +1,20 @@
+<mat-sidenav
+    #sidenav
+    [opened]="open"
+    (keydown.escape)="sidenav.close()"
+    (closedStart)="closeMenu.emit()"
+    disableClose
+>
+    <mat-nav-list>
+        <!--<a mat-list-item [routerLink]="['/']" (click)="closeMenu.emit()">
+            <mat-icon matListItemIcon>book</mat-icon>
+            <div matListItemTitle>My Favorites</div>
+            <div matListItemLine>View your book collection</div>
+        </a>-->
+        <a mat-list-item [routerLink]="['/search']" (click)="closeMenu.emit()">
+            <mat-icon matListItemIcon>search</mat-icon>
+            <div matListItemTitle>Search</div>
+            <div matListItemLine>Find your next book!</div>
+          </a>
+    </mat-nav-list>
+</mat-sidenav>

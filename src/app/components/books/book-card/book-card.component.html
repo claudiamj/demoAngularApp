@@ -1,0 +1,23 @@
+    <mat-card *ngFor="let book of books">
+      <mat-card-title-group>
+        <img
+          mat-card-sm-image
+          *ngIf="book.thumbnailUrl"
+          [src]="book.thumbnailUrl"
+          [alt]="book.title"
+        />
+        <mat-card-title>{{ book.title }}</mat-card-title>
+        <mat-card-subtitle *ngIf="book.isbn">{{
+          book.isbn 
+          }}</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        {{book.shortDescription}}
+      </mat-card-content>
+      <mat-card-footer>
+        <h5 mat-subheader>Written By:</h5>
+        <mat-list-item *ngFor="let author of book.authors">
+          {{ author }}
+        </mat-list-item>
+      </mat-card-footer>
+    </mat-card>
